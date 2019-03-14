@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-select.min.css">
+	<link href="css/bootstrap-range.css" rel="stylesheet">
+	<link href="css/jquery.magicsearch.css" rel="stylesheet">
+	<style type="text/css">
+		body {
+		  padding : 10px ;  
+		}
+
+		#exTab1 .tab-content {
+		  /*color : white;*/
+		  background-color: #428bca;
+		  padding : 15px 15px 5px 15px;
+		}
+
+		#exTab1 .nav-pills > li > a {
+		  border-radius: 0;
+		}
+		.bootstrap-range {
+		  width: 260px;
+		}
+
+		.bootstrap-range .input-container{
+			padding-right: 25px;
+		}
+
+	  .right-column {
+	    float: right;
+	    width: 130px;
+	    padding: 5px;
+	  }
+
+	 .left-column {
+	    float: left;
+	    width: 130px;
+	    padding: 5px;
+	  }
+
+	  .left-column .list-unstyled{
+	  	    width: 208%;
+    		z-index: -1;
+	  }
+
+	  .input-container {
+	    text-align: center;
+	  }
+
+	  .input-styles, input[name="minimum"], input[name="maximum"] {
+	    width: 100%;
+	    font-size: 0.9em;
+	    border-radius: 5px;
+	    margin-right: 3px;
+	  }
+
+	  .list-items ul li{
+	     
+	        padding: 5px 10px;
+
+	        
+	      
+	  }
+
+	 .list-items ul li:hover {
+	      cursor: pointer;
+	      color: blue;
+	    }
+
+	  .list-items .list-unstyled {
+	   		height: 200px;
+	   		overflow-y: scroll;
+	   }
+
+	   .advance_search{
+	   	display: none;
+	   }
+
+	    ._24327f9c {
+    height: 100%;
+    margin-right: 1rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 0.8;
+    flex: 0.8;
+}
+
+.ad62c515 {
+    position: relative;
+    border-radius: .2rem;
+    color: #444;
+    font-weight: 400;
+    background-color: #fff;
+}
+
+._24327f9c>div {
+    width: 100%;
+}
+._9dc6d35d {
+    min-height: 5rem;
+    box-sizing: border-box;
+    height: auto;
+    padding: .5rem 1rem;
+    padding-bottom: 0;
+    border-radius: 2px;
+    background-color: #fff;
+}
+
+._5176f8e1 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #747474;
+    display: block;
+    text-transform: uppercase;
+}
+
+.e7c6503c, .ef5cccac {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.e7c6503c {
+    position: relative;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: .4rem 0 .2rem;
+    height: auto;
+}
+
+.ef5cccac {
+    font-size: 1.4rem;
+    float: left;
+    width: 100%;
+    margin: 0;
+    padding-top: 0;
+    padding-right: .5rem;
+    padding-bottom: 0;
+    vertical-align: text-top;
+    text-overflow: ellipsis;
+    color: #444;
+    font-weight: 400;
+    border: none;
+}
+.e7c6503c, .ef5cccac {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.d855ac0c, .eedc221b {
+    fill: #95989a;
+    height: .7rem;
+}
+
+._0a772a68 {
+    position: absolute;
+    top: 100%;
+    left: -175px;
+    right: 0;
+    z-index: 5;
+    margin-top: .2rem;
+}
+
+._4c9282ef {
+    width: 32.5rem;
+}
+._3f35dbb9 {
+    padding: 1rem;
+    box-shadow: 0 0.3rem 0.6rem 0 rgba(0,0,0,.25);
+    box-sizing: border-box;
+    border-radius: .5rem;
+    background-color: #fff;
+}
+ul {
+    list-style: none;
+}
+
+.fe6db599 {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.e7e540d2 {
+    color: #444;
+    border-bottom: .2rem solid #49a8e5;
+}
+._05b994c0 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 0 .1rem .3rem;
+    color: #a3a3a3;
+    border: none;
+    margin-right: 1rem;
+}
+
+._05b994c0:last-child {
+    margin-right: 0;
+}
+
+
+._97ab0b50 {
+    display: inline-block;
+    margin-top: 1rem;
+    margin-right: 2rem;
+    vertical-align: top;
+    /*width: calc(50% - 1rem);*/
+    margin-right: 1rem;
+}
+
+._31a8085a {
+    font-size: 1.3rem;
+    line-height: 2.8rem;
+    overflow: hidden;
+    box-sizing: border-box;
+    height: 3rem;
+    margin-bottom: .6rem;
+    padding: 0 1rem;
+    cursor: pointer;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-align: center;
+    color: #363636;
+    border: .1rem solid #e3e3e3;
+    border-radius: .3rem;
+    margin-right: 5px
+}
+.ab3dd470 {
+    margin-left: auto;
+    margin-top: .5rem;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+}
+
+._9aa2441a {
+    font-size: 11px;
+    margin-right: .5rem;
+    color: #444;
+    border: none;
+    background: none;
+}
+
+._85b30621 {
+    font-size: 11px;
+    padding: .3rem .6rem;
+    color: #fff;
+    border: none;
+    border-radius: .4rem;
+    background-color: #444;
+}
+ 
+ .nav-tabs > li {
+    float:none;
+    display:inline-block;
+    zoom:1;
+}
+
+.nav-tabs {
+    text-align:center;
+}
+
+#property_box
+{
+	display: none;
+}
+
+.active_property{
+	background-color: #49a8e5;
+}
+
+#property_box .nav-tabs{
+	border-bottom: 0px;
+}
+
+#property_box .active a{
+	border-left: 0px;
+	border-right: 0px;
+	border-top: 0px;
+	border-bottom: .2rem solid #49a8e5;
+}
+
+#property_box ul{
+	padding: 0;
+}
+
+</style>
+</head>
+<body>
+
+<div id="exTab1" class="container">	
+	<ul  class="nav nav-pills">
+		<li class="active"><a class="rent" href="#">Rent</a></li>
+		<li><a class="buy" href="#">Buy</a></li>
+	</ul>
+
+	<div class="tab-content clearfix" style="background-color: rgba(0,0,0,.6);">
+  		<div class="tab-pane active" id="1a">
+  			<div class="row">
+  				<div class="col-md-6" style="padding-right: 0">
+  					 <div class="form-group">
+						<input type="text" id="basic" name="search" class="form-control magicsearch" placeholder="Search...">
+					 </div>
+  				</div>
+  				<div class="col-md-2" style="padding-left: 0;padding-right: 0;">
+  					<div class="form-group">
+					  <select class="form-control" id="id_bedrooms" name="bedrooms">
+					  	<option value="Beds" selected="selected">Beds</option>
+					    <option value="1 Bed">1 Bed</option>
+					    <option value="2 Bed">2 Bed</option>
+					    <option value="3 Bed">3 Bed</option>
+					    <option value="4 Bed">4 Bed</option>
+					  </select>
+					</div>
+  				</div>
+  				<div class="col-md-2" style="padding-left: 0;padding-right: 0;">
+  					<div class="form-group">
+					  <input type="text" placeholder="Budget" class="form-control budget">
+					</div>
+  				</div>
+  				<div class="col-md-2 advance_search">
+  					<div class="form-group">
+					  <div class="ad62c515 _24327f9c" name="property type">
+						   <div class="_9dc6d35d">
+						      <label class="_5176f8e1" for="filter-title">property type</label>
+						      <div role="button" aria-haspopup="true" aria-label="Category filter"  id="property" class="e7c6503c">
+						         <span class="ef5cccac"><span class="fontCompensation" id="property_name">Residential</span></span>
+						         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" class="d855ac0c">
+						            <path class="cls-1" d="M12 6L6 0 0 6h12z"></path>
+						         </svg>
+						      </div>
+						      <div class="_0a772a68" id="property_box">
+						         <div class="_3f35dbb9 _4c9282ef">
+						            <ul class="nav nav-tabs" style="text-align: center">
+									    <li class="active"><a data-toggle="tab" href="#RESIDENTIAL">RESIDENTIAL</a></li>
+									    <li><a data-toggle="tab" href="#COMMERCIAL">COMMERCIAL</a></li>
+									</ul>
+									<div class="tab-content" style="background-color: #FFFFFF;">
+										<div id="RESIDENTIAL" class="tab-pane fade in active">
+									      	<ul class="_97ab0b50" style="height: 180px;display: flex;flex-flow: column wrap; margin-right: 0;">
+									      		<li class="_31a8085a false">Apartment</li>
+									      		<li class="_31a8085a false">Townhouse</li>
+									      		<li class="_31a8085a false">Villa Compound</li>
+									      		<li class="_31a8085a false">Residential Plot</li>
+									      		<li class="_31a8085a false">Residential Building</li>
+									      		<li class="_31a8085a false">Villa</li>
+									      		<li class="_31a8085a false">Penthouse</li>
+									      		<li class="_31a8085a false">Hotel Apartment</li>
+									      		<li class="_31a8085a false">Residential Floor</li>
+									      	</ul>
+									    </div>
+									    <div id="COMMERCIAL" class="tab-pane fade">
+									      <ul class="_97ab0b50" style="height: 180px;display: flex;flex-flow: column wrap;">
+									      	<li class="_31a8085a false">Office</li>
+									      	<li class="_31a8085a false">Warehouse</li>
+									      	<li class="_31a8085a false">Commercial Villa</li>
+									      	<li class="_31a8085a false">Commercial Plot</li>
+									      	<li class="_31a8085a false">Commercial Building</li>
+									      	<li class="_31a8085a false">Industrial Land</li>
+									      	<li class="_31a8085a false">Showroom</li>
+									      </ul>
+									    </div>
+									</div>
+									
+						            <div class="ab3dd470"><button class="_9aa2441a" id="reset">Reset</button><button id="close" class="_85b30621">Close</button></div>
+						         </div>
+						      </div>
+						   </div>
+						</div>
+
+					</div>
+  				</div>
+  				<div class="col-md-2 advance_search">
+  					<div class="form-group">
+					  <select class="form-control" id="id_city" name="city">
+					    <option value="Emirate" selected="selected">Emirate</option>
+						<option value="Abu Dhabi">Abu Dhabi</option>
+						<option value="Ajman">Ajman</option>
+						<option value="Al Ain">Al Ain</option>
+						<option value="Dubai">Dubai</option>
+						<option value="Fujairah">Fujairah</option>
+					  </select>
+					</div>
+  				</div>
+  				<div class="col-md-2 advance_search">
+  					<div class="form-group">
+					  <select class="form-control" id="id_SubEmirate" name="SubEmirate">
+					    <option value="Emirate">Select Emirate</option>
+					  </select>
+					</div>
+  				</div>
+  				<div class="col-md-2 advance_search">
+  					<div class="form-group">
+					  <select class="form-control" id="id_sublocation" name="sublocation">
+					    <option value="Location">Select Location</option>
+					  </select>
+					</div>
+  				</div>
+  				<div class="col-md-2 advance_search">
+  					<div class="form-group">
+					 	<input type="text" placeholder="Area" class="form-control age">
+					</div>
+  				</div>
+  				<div class="col-md-2 advance_search">
+  					<div class="form-group">
+					  <select class="form-control" id="id_furnished" name="furnished">
+					    <option value="Furnishing">Furnishing</option>
+					    <option value="Unfurnished">Unfurnished</option>
+					    <option value="Furnished">Furnished</option>
+					    <option value="Partially Furnished">Partially Furnished</option>
+					  </select>
+					</div>
+  				</div>
+  				<div class="col-md-2 advance_search">
+  					<div class="form-group">
+					  <select class="selectpicker form-control" data-live-search="true" id="select_company">
+					  	<option value="Company">Select Company</option>
+						<option value="ABC Company">ABC Company</option>
+						<option value="Wipro">Wipro</option>
+						<option value="Infosys">Infosys</option>
+					  </select>
+					</div>
+  				</div>
+  				<div class="col-md-2 advance_search">
+  					<div class="form-group">
+					  <select class="form-control" id="id_payment_freq" name="payment_freq">
+					    <option value="Term" selected="selected">Rental Term</option>
+					    <option value="Daily">Daily</option>
+					    <option value="Weekly">Weekly</option>
+					    <option value="Yearly">Yearly</option>
+					  </select>
+					</div>
+  				</div>
+  				<div class="col-md-2" style="float: right;">
+  					<div class="form-group">
+  						<input type="button" class="btn btn-primary" name="Submit" value="Search" style="width: 100%;background-color: #14a5aa;">
+  					</div>
+  				</div>
+  			</div>
+		</div>
+		<div class="tab-pane" id="2a">
+  			<!--  -->
+  		</div>
+	</div>
+	<button class="btn btn-primary" id="clear">Clear</button>
+	<button class="btn btn-primary" id="advance" style="float: right;">Advance Search</button>
+  </div>
+
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-select.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-range.js"></script>
+	<script src="js/jquery.magicsearch.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+    		$("input.age").bootstrapRange({
+		        minValues: [10,15,20,25,30,40,10,15,20,25,30,40,10,15,20,25,30,40],
+		        maxValues: [10,15,20,25,30,40,10,15,20,25,30,40,10,15,20,25,30,40,10,15,20,25,30,40],
+		        minPlaceholder:'Min',
+		        maxPlaceholder:'Max',
+		        maxHintText: "-",
+		        minHintText: "",
+		        minimumCallback: function (min) {
+		          console.log('Selected minimum = ', min);
+		        },
+		        maximumCallback: function (max) {
+		          console.log('Selected maximum = ', max);
+		        }
+		      });
+
+    		$("input.budget").bootstrapRange({
+		        minValues: [10,15,20,25,30,40,10,15,20,25,30,40,10,15,20,25,30,40],
+		        maxValues: [10,15,20,25,30,40,10,15,20,25,30,40,10,15,20,25,30,40],
+		        minPlaceholder:'Min',
+		        maxPlaceholder:'Max',	
+		        maxHintText: "-",
+		        minHintText: "",
+		        minimumCallback: function (min) {
+		          console.log('Selected minimum = ', min);
+		          $(".left-column .minimum-items").attr("style","display:none;z-index:-1;");
+		        },
+		        maximumCallback: function (max) {
+		          console.log('Selected maximum = ', max);
+		          $(".right-column .minimum-items").attr("style","display:none;");
+		        }
+		    });
+
+    		$('#advance').click(function(){
+    			if($('.advance_search').is(':visible'))
+				{
+					$('.advance_search').css('display','none');
+				}else{
+					$('.advance_search').css('display','block');
+				}
+    		});
+
+    		$('#property').click(function(){
+    			if($('#property_box').is(':visible'))
+				{
+					$('#property_box').css('display','none');
+				}else{
+					$('#property_box').css('display','block');
+				}
+    		});
+
+    		$('.false').click(function(){
+    			$('.false').removeClass('active_property');
+    			$(this).addClass('active_property');
+    			$('#property_name').text($(this).text());
+    			$('#property_box').css('display','none');
+    		});
+
+    		$('#reset').click(function(){
+    			$('.false').removeClass('active_property');
+    			$('#property_name').text("RESIDENTIAL");
+    			$('#property_box').css('display','none');
+    		});
+
+    		$('#close').click(function(){
+    			$('#property_box').css('display','none');
+    		});
+
+    		$('#clear').click(function(){
+    			$('#id_bedrooms').val('Beds');
+    			$('.budget').val('');
+    			$('.false').removeClass('active_property');
+    			$('#property_name').text("RESIDENTIAL");
+    			$('#property_box').css('display','none');
+    			$('#id_city').val('Emirate');
+    			$('#id_SubEmirate').val('Emirate');
+    			$('#sublocation').val('Location');
+    			$('.age').val('');
+    			$('#select_company').val('Company');
+    			$('#id_furnished').val('Furnishing');
+    			$('#id_payment_freq').val('Term');
+
+    			str='';
+    			str+='<option value="Term" selected="selected">Rental Term</option>';
+				str+='<option value="Daily">Daily</option>';	    
+				str+='<option value="Weekly">Weekly</option>';
+				str+='<option value="Yearly">Yearly</option>';
+				$('#id_payment_freq').html(str);
+				$('.buy').css('background-color','#FFFFFF').css('color','#337ab7');
+				$('.rent').css('background-color','#337ab7').css('color','#FFFFFF');
+
+				$('#basic').trigger('clear');
+
+    		});
+
+    		$('.rent').click(function(){
+    			str='';
+    			str+='<option value="Term" selected="selected">Rental Term</option>';
+				str+='<option value="Daily">Daily</option>';	    
+				str+='<option value="Weekly">Weekly</option>';
+				str+='<option value="Yearly">Yearly</option>';
+				$('#id_payment_freq').html(str);
+				$('.buy').css('background-color','#FFFFFF').css('color','#337ab7');
+				$(this).css('background-color','#337ab7').css('color','#FFFFFF');
+    		});
+
+    		$('.buy').click(function(){
+    			str='';
+    			str+='<option value="Term" selected="selected">Completion Status</option>';
+				str+='<option value="Unknown">Unknown</option>';	    
+				str+='<option value="Completed">Completed</option>';
+				str+='<option value="Off-Plan">Off-Plan</option>';
+				$('#id_payment_freq').html(str);
+				$('.rent').css('background-color','#FFFFFF').css('color','#337ab7');
+				$(this).css('background-color','#337ab7').css('color','#FFFFFF');
+    		});
+
+    		$(function() {
+	            var dataSource = [
+	                {id: 1, firstName: 'Tim'},
+	                {id: 2, firstName: 'Eric'},
+	                {id: 3, firstName: 'Victor'},
+	                {id: 4, firstName: 'Lisa'},
+	                {id: 5, firstName: 'Oliver'},
+	                {id: 6, firstName: 'Zade'},
+	                {id: 7, firstName: 'David'},
+	                {id: 8, firstName: 'George'},
+	                {id: 9, firstName: 'Tony'},
+	                {id: 10, firstName: 'Bruce'},
+	            ];
+	            $('#basic').magicsearch({
+	                dataSource: dataSource,
+	                fields: ['firstName'],
+	                id: 'id',
+	                format: '%firstName%',
+	                multiple: true,
+	                multiField: 'firstName',
+	                multiStyle: {
+	                    space: 5,
+	                    width: 80
+	                }
+
+	            });
+       		});
+
+
+    		$(document).on('focus', "input[name='minimum']", function(){
+
+    			$(".left-column .minimum-items").attr("style","display:block;z-index:1;");
+    			$(".right-column .minimum-items").attr("style","display:none;z-index:-1;");
+    		});
+    		$(document).on('focus', "input[name='maximum']", function(){
+    			$(".left-column .minimum-items").attr("style","display:none;z-index:-1;");
+    			$(".right-column .minimum-items").attr("style","display:block;z-index:1;");
+    		});
+
+    	});
+    </script>
+</body>
+</html>
